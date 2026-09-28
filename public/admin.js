@@ -106,7 +106,7 @@ async function loadOrders() {
               .join("")}
           </select>
         </td>
-        <td>${new Date(order.created_at + "Z").toLocaleString()}</td>
+        <td>${new Date(order.created_at).toLocaleString()}</td>
         <td><button class="delete-button" data-id="${order.id}">Delete</button></td>
       `;
       ordersBody.appendChild(tr);
