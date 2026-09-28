@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Minits</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">Minits</a>
+    <nav>
+      <a href="/">Order</a>
+      <a href="/lookup.html">Find order</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Freshly made</p>
+      <h1>Build your Minits order</h1>
+      <p>Choose Raspberry, Strawberry, Chocolate, or mix all three.</p>
+    </section>
+
+    <section class="card">
+      <form id="orderForm">
+        <label class="field">
+          <span>Your name</span>
+          <input id="customerName" name="customerName" type="text" maxlength="80" required />
+        </label>
+
+        <label class="field">
+          <span>Your class</span>
+          <select id="className" name="className" required>
+            <option value="" selected disabled>Select your class</option>
+            <option>5.A</option><option>5.B</option><option>5.C</option>
+            <option>Prima A</option><option>Prima B</option><option>Prima C</option>
+            <option>Sekunda A</option><option>Sekunda B</option><option>Sekunda C</option>
+            <option>Tercia A</option><option>Tercia B</option><option>Tercia C</option>
+            <option>Kvarta A</option><option>Kvarta B</option><option>Kvarta C</option>
+            <option>Kvinta A</option><option>Kvinta B</option><option>Kvinta C</option>
+            <option>Sexta A</option><option>Sexta B</option><option>Sexta C</option>
+            <option>Septima A</option><option>Septima B</option><option>Septima C</option>
+            <option>Oktava A</option><option>Oktava B</option>
+            <option>Katedra</option>
+          </select>
+        </label>
+
+        <div class="flavours">
+          <article class="flavour">
+            <div class="emoji">🫐</div>
+            <h2>Raspberry</h2>
+            <p class="price">€1.00 each</p>
+            <label>
+              Quantity
+              <input name="raspberry" type="number" min="0" value="0" />
+            </label>
+          </article>
+
+          <article class="flavour">
+            <div class="emoji">🍓</div>
+            <h2>Strawberry</h2>
+            <p class="price">€1.00 each</p>
+            <label>
+              Quantity
+              <input name="strawberry" type="number" min="0" value="0" />
+            </label>
+          </article>
+
+          <article class="flavour">
+            <div class="emoji">🍫</div>
+            <h2>Chocolate</h2>
+            <p class="price">€1.50 each</p>
+            <label>
+              Quantity
+              <input name="chocolate" type="number" min="0" value="0" />
+            </label>
+          </article>
+        </div>
+
+        <div class="order-total">
+          <span>Order total</span>
+          <strong id="liveTotal">€0.00</strong>
+        </div>
+
+        <button class="primary" type="submit">Place order</button>
+        <p id="orderMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="successBox" class="card success hidden">
+      <p class="eyebrow">Order confirmed</p>
+      <h2>Your lookup code</h2>
+      <div id="orderCode" class="code"></div>
+      <p class="success-total">Total: <strong id="confirmedTotal">€0.00</strong></p>
+      <p>Save this code. You can use it on the Find Order page.</p>
+      <a class="secondary button-link" href="/lookup.html">Search an order</a>
+    </section>
+  </main>
+
+  <script src="order.js"></script>
+</body>
+</html>
