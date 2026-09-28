@@ -110,7 +110,7 @@ async function loadAccounts() {
       row.innerHTML = `
         <div>
           <strong>${escapeHtml(account.username)}</strong>
-          <small>Created ${new Date(account.created_at + "Z").toLocaleString()}</small>
+          <small>Created ${new Date(account.created_at).toLocaleString()}</small>
         </div>
         <div class="account-actions">
           <button class="secondary reset-password" data-id="${account.id}" data-username="${escapeHtml(account.username)}">Reset password</button>
