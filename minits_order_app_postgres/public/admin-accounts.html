@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Accounts | Minits</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">Minits</a>
+    <nav>
+      <a href="/">Order</a>
+      <a href="/lookup.html">Find order</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Master access</p>
+      <h1>Manage admin accounts</h1>
+      <p>This page uses the separate account-manager password and does not require a username.</p>
+    </section>
+
+    <section id="managerLoginCard" class="card narrow-card">
+      <form id="managerLoginForm">
+        <label class="field">
+          <span>Account-manager password</span>
+          <input id="managerPassword" type="password" autocomplete="current-password" required />
+        </label>
+        <button class="primary" type="submit">Unlock account manager</button>
+        <p id="managerLoginMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="managerPanel" class="hidden">
+      <div class="admin-actions">
+        <button id="managerRefreshButton" class="secondary">Refresh</button>
+        <button id="managerLogoutButton" class="danger-outline">Lock page</button>
+      </div>
+
+      <div class="manager-grid">
+        <section class="card">
+          <p class="eyebrow">New account</p>
+          <h2>Create an admin</h2>
+          <form id="createAdminForm">
+            <label class="field">
+              <span>Username</span>
+              <input id="newUsername" type="text" minlength="3" maxlength="32" required />
+            </label>
+            <label class="field">
+              <span>Password</span>
+              <input id="newPassword" type="password" minlength="8" required />
+            </label>
+            <button class="primary" type="submit">Create admin</button>
+            <p id="createMessage" class="message" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="card">
+          <p class="eyebrow">Existing accounts</p>
+          <h2>Normal admin accounts</h2>
+          <div id="accountsList" class="account-list"></div>
+          <p id="accountsMessage" class="message" aria-live="polite"></p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin-accounts.js"></script>
+</body>
+</html>
