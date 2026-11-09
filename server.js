@@ -9,7 +9,7 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// PostgreSQL / Supabase connection.
+// PostgreSQL / Supabase connection
 const DATABASE_URL = process.env.DATABASE_URL;
 
 // Admin settings.
